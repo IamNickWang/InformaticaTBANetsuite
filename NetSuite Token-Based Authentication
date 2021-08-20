@@ -1,0 +1,21 @@
+
+https://network.informatica.com/cloud/index.htm#page/cloud-netsuite-connector-guide/NetSuite_Token-Based_Authentication.html
+
+
+NetSuite Token-Based Authentication
+You can configure NetSuite connections to use token-based authentication to access NetSuite.
+Token-based authentication is the preferred method to access NetSuite. When a connection uses token-based authentication, the agent uses a token ID and token secret to access NetSuite instead of a user name and password. The NetSuite connection must use WSDL URL version 2015_2 and above to use token-based authentication.
+To set up token-based authentication, you install a NetSuite bundle for Informatica Cloud token-based authentication and generate a token ID and token secret in NetSuite. The token does not expire unless you revoke it from your NetSuite account. However, you might need to update the bundle and generate a new token if Informatica updates the bundle version in the future.
+You enter the generated token ID and token secret when you specify the NetSuite connection properties in Informatica Cloud. If you include token information and a user name and password for a connection that uses WSDL URL version 2015_2, the agent uses token-based authentication to access NetSuite.
+Generating a NetSuite Token ID and Token Secret
+To use token-based authentication, in NetSuite, you install an Informatica token-based authentication bundle and generate the token ID and token secret. You use the token ID and token secret when you configure the NetSuite connection in Informatica Cloud.
+1.Log in to NetSuite using a Full Access or Administrator account.
+2.Navigate to Customization > SuiteBundler > Search and Install Bundles.
+3.Search for the keyword, "InformaticaTBABundle".
+A bundle with Bundle ID of 116143 appears in the search results.
+4.Select InformaticaTBABundle and install it.
+5.Navigate to Setup > Users/Roles > Access Tokens > New.
+6.For Application Name, select InformaticaTBAIntegration.
+7.Write down the access token and token secret displayed on the page.
+You enter the token ID and token secret in Informatica Cloud when you configure the NetSuite connection.
+Note: If you lose the token information, you must generate another token in NetSuite. NetSuite does not provide token information for previously generated tokens.
